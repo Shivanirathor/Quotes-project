@@ -42,13 +42,13 @@ if(quote.text.length > 120){
 
 }
 async function getQuotes(){
-    loading();
+    // loading();
     const apiUrl = "https://type.fit/api/quotes";
     try{
         const response = await fetch(apiUrl);
         apiQuotes = await response.json();
         newQuote();
-        complete();
+        // complete();
         // console.log(apiQuotes);
     }catch(error){
     }
