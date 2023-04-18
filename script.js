@@ -3,7 +3,7 @@ const quoteText = document.getElementById("quote");
 const authorText = document.getElementById("author");
 const twitterBtn = document.getElementById("twitter");
 const newQuoteBtn = document.getElementById("new-quote");
-const loader = document.querySelector("span-loader")
+// const loader = document.querySelector("span-loader")
 
 // function loading(){
 //     loader.classList.remove("hide");
@@ -42,7 +42,7 @@ if(quote.text.length > 120){
 
 }
 async function getQuotes(){
-    // loading();
+    loading();
     const apiUrl = "https://type.fit/api/quotes";
     try{
         const response = await fetch(apiUrl);
