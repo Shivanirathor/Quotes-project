@@ -70,30 +70,50 @@ button:hover{
     filter: brightness(150%);
     color: #38a1f3;
 }
-/* 
-.loader {
-    width: 60px;
-    height: 60px;
-    border: 5px solid #2b2929;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    }
 
-    @keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-    } 
+.loader {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+.loader:before{
+    content: "";
+    border-left: 24px solid #191717;
+    border-right: 24px solid #fff;
+    position: absolute;
+    height: 24px;
+    width: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0px;
+    animation: splitX 1s  linear infinite alternate;
+}
+.loader:after{
+  content: '';
+  width: 48px;
+  height: 24px;
+  background: #1b9486;
+  position: absolute;
+  left: 0;
+  bottom:0;
+  animation:moveY 1s linear infinite alternate;
+}
+@keyframes splitX {
+  0% {width: 0; transform: translate(-50% , 0)}
+  33% {width: 100%; transform: translate(-50% , 0)}
+  66% {width: 100%; transform: translate(-50% , 24px)}
+  100% {width: 0; transform: translate(-50% , 24px)}
+}
+
+@keyframes moveY {
+  0% , 33% {transform: translateY(0)}
+  66% , 100% {transform: translateY(-24px)}
+}
+
     
    .hide{
     display: none;
-    }  */
+    } 
 
 button:active{
     transform: translateY(10px);
@@ -107,7 +127,7 @@ button:active{
 margin: auto 10px;
 }
 
-/* .quote-text {
+.quote-text {
 font-size: 2.5rem;
-} */
+}
 }
