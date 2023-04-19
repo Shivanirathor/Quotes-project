@@ -30,7 +30,7 @@ quoteText.textContent = quote.text;
 
 // 2nd way
 // authorText.textContent = quote.author ? quote.author : "unknown";
-authorText.textContent = quote.author || "unknown";
+authorText.textContent = quote.author || "unknown";    //logical operator
 
 // 120>character
 if(quote.text.length > 120){
@@ -38,9 +38,8 @@ if(quote.text.length > 120){
 }else{
     quoteText.classList.remove("long-quote");
 }
-
-
 }
+
 async function getQuotes(){
     loading();
     const apiUrl = "https://type.fit/api/quotes";
@@ -49,7 +48,6 @@ async function getQuotes(){
         apiQuotes = await response.json();
         newQuote();
         complete();
-        // console.log(apiQuotes);
     }catch(error){
     }
 }
